@@ -1,11 +1,15 @@
+module Life
+  def lost_game(life)
+    life -= 1
+  end
+end
+
 class Players
-  attr_accessor :c_player
+  attr_accessor :life
+  include Life
+
   def initialize
-    @c_player = "Player 2"
+    @life = 3
   end
 
-  def current_player
-    c_player == "Player 2" ? c_player = "Player 1" : c_player = "Player 2"
-    c_player
-  end
 end
